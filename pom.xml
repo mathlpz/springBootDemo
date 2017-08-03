@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>demo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		 <!-- 如果在使用自带tomcat请注释下面，如果使用第三方tomcat不要注释下面springBoot -->  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Redis兼具了缓存系统和数据库的一些特性 -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-data-redis</artifactId>  
+		</dependency>
+		<!-- 共享Session -->
+		<dependency>
+		    <groupId>org.springframework.session</groupId>
+		    <artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+		
+	    <!-- 数据库操作 -->
+	    <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- Spring的JdbcTemplate是自动配置的，你可以直接使用@Autowired来注入到你自己的bean中，来使用JdbcTemplate。  -->
+		<!-- <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency> -->
+		
+		
+		<!-- 热启动在正常开发项目中已经很常见了吧，虽然平时开发web项目过程中，改动项目启重启总是报错；
+			但springBoot对调试支持很好，修改之后可以实时生效，需要添加以下的配置： -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+	    </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- 如果要打成jar包并使用 java -jar **.jar运行，请不要注释spring-boot-maven-plugin -->  
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+	                <fork>true</fork>
+	            </configuration>
+			</plugin>
+			<!-- <plugin>  
+                 <groupId>org.apache.maven.plugins</groupId>  
+                 <artifactId>maven-war-plugin</artifactId>  
+                 <configuration>  
+                     <warName>springboot</warName>  
+                 </configuration>  
+             </plugin> --> 
+		</plugins>
+	</build>
+
+
+</project>
