@@ -65,7 +65,17 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency> -->
-		
+		<!-- springboot+mybatis可以完全注解不用配置文件，也可以简单配置轻松上手 -->
+		<!-- <dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>1.1.1</version>
+		</dependency> -->
+		<!-- springboot集成RabbitMQ -->
+		<dependency>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 		
 		<!-- 热启动在正常开发项目中已经很常见了吧，虽然平时开发web项目过程中，改动项目启重启总是报错；
 			但springBoot对调试支持很好，修改之后可以实时生效，需要添加以下的配置： -->
